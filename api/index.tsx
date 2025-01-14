@@ -28,10 +28,9 @@ export const app = new Frog({
 
 app.frame("/", (c) => {
   return c.res({
-    image:
-      "https://nft-cdn.alchemy.com/base-mainnet/1cb1421f2f8e5a26753004b23f80eba2",
+    image: "https://chonks-frame-generator.vercel.app/chonk.png",
     imageAspectRatio: "1.91:1",
-    intents: [<Button action="/random">Chonks Nft</Button>],
+    intents: [<Button action="/random">Display Chonks Nft</Button>],
   });
 });
 const Max_Supply = 83300;
