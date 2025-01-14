@@ -24,19 +24,12 @@ export const app = new Frog({
     height: 600,
     width: 500,
   },
-  hub: {
-    apiUrl: "https://hubs.airstack.xyz",
-    fetchOptions: {
-      headers: {
-        "x-airstack-hubs": process.env.AIRSTACK_API_KEY || "",
-      },
-    },
-  },
 });
 
 app.frame("/", (c) => {
   return c.res({
-    image: `https://nft-cdn.alchemy.com/base-mainnet/1cb1421f2f8e5a26753004b23f80eba2`,
+    image:
+      "https://nft-cdn.alchemy.com/base-mainnet/1cb1421f2f8e5a26753004b23f80eba2",
     imageAspectRatio: "1.91:1",
     intents: [<Button action="/random">Chonks Nft</Button>],
   });
@@ -74,12 +67,7 @@ app.frame("/random", async (c) => {
     return c.res({
       image: `${img}`,
       imageAspectRatio: "1.91:1",
-      intents: [
-        <Button.Link href={`https://www.chonks.xyz/chonks/${rand}`}>
-          View Nft
-        </Button.Link>,
-        <Button action={`/random`}>Random Again</Button>,
-      ],
+      intents: [<Button action={`/random`}>Random Again</Button>],
     });
   } catch (error) {
     return c.error({
