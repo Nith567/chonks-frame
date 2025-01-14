@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 import axios from "axios";
 
 // Uncomment this packages to tested on local server
-// import { devtools } from "frog/dev";
-// import { serveStatic } from "frog/serve-static";
+import { devtools } from "frog/dev";
+import { serveStatic } from "frog/serve-static";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -14,7 +14,7 @@ dotenv.config();
 export const app = new Frog({
   assetsPath: "/",
   basePath: "/api/frame",
-  title: "Faucet",
+  title: "Chonks",
   imageAspectRatio: "1:1",
   headers: {
     "cache-control":
@@ -89,7 +89,7 @@ app.frame("/random", async (c) => {
 });
 
 //uncomment below line while testing
-// devtools(app, { serveStatic });
+devtools(app, { serveStatic });
 
 export const GET = handle(app);
 export const POST = handle(app);
